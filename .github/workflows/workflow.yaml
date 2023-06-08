@@ -11,5 +11,8 @@ jobs:
       - name: Convert to uppercase
         run: |
           STG_KEY=iamStgKey
-          key_name="${{ env.prefix }}^^_KEY"
+          _ENV=${{env.prefix}}
+          key_name="${_ENV}^^_KEY"
           echo $key_name
+          2key_name="${${{ env.prefix }}^^}_KEY"
+          echo $2key_name
